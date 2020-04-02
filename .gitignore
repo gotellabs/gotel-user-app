@@ -77,6 +77,10 @@ fastlane/readme.md
 # Version control
 vcs.xml
 
+.settings/
+
+google-services.json
+
 # lint
 lint/intermediates/
 lint/generated/
