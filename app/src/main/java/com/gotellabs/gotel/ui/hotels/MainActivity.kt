@@ -1,7 +1,8 @@
-package com.gotellabs.gotel
+package com.gotellabs.gotel.ui.hotels
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.gotellabs.gotel.R
 
 class MainActivity : AppCompatActivity() {
 
