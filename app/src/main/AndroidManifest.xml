@@ -3,14 +3,17 @@
     package="com.gotellabs.gotel">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".GotelApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name=".GotelApp"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ui.boarding.BoardingActivity"></activity>
+        <activity android:name=".ui.splash.SplashActivity" />
         <activity android:name=".ui.hotels.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
