@@ -44,10 +44,12 @@ dependencies {
     kapt Dependencies.roomCompiler
     implementation Dependencies.roomKtx
 
-
+    // Android core
     implementation Dependencies.appCompat
-    implementation Dependencies.coreKtx
     implementation Dependencies.constraintLayout
+    implementation Dependencies.coreKtx
+
+    // Firebase
     implementation Dependencies.firebaseFireStore
     implementation Dependencies.firebaseAuth
     implementation Dependencies.firebaseMessaging
