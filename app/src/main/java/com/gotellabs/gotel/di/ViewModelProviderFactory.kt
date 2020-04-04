@@ -4,13 +4,15 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import javax.inject.Inject
 import javax.inject.Provider
+import javax.inject.Singleton
 
 
 /**
  * Created by Enzo Lizama Paredes on 4/3/20.
  * Contact: lizama.enzo@gmail.com
  */
-
+@Suppress("UNCHECKED_CAST")
+@Singleton
 class ViewModelProviderFactory @Inject constructor(
     private val viewModelsMap: Map<Class<out ViewModel>, @JvmSuppressWildcards Provider<ViewModel>>
 ) : ViewModelProvider.NewInstanceFactory() {
