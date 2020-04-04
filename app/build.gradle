@@ -25,6 +25,14 @@ android {
         }
     }
 
+    viewBinding {
+        enabled = true
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -35,6 +43,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     // Project modules
     implementation project(':domain')
+    implementation project(':data')
 
     implementation Dependencies.kotlin
     implementation Dependencies.material
@@ -53,6 +62,13 @@ dependencies {
     implementation Dependencies.firebaseFireStore
     implementation Dependencies.firebaseAuth
     implementation Dependencies.firebaseMessaging
+
+    // Dagger
+    implementation Dependencies.dagger
+    implementation Dependencies.daggerAndroid
+    implementation Dependencies.daggerAndroidSupport
+    kapt Dependencies.daggerCompiler
+    kapt Dependencies.daggerAndroidProcessor
 
     // Testing
     testImplementation Dependencies.junit
