@@ -1,15 +1,25 @@
 package com.gotellabs.gotel.ui.hotels
 
 import android.os.Bundle
-import com.gotellabs.gotel.R
+import android.widget.ImageView
+import com.gotellabs.domain.model.HotelModel
 import com.gotellabs.gotel.base.BaseActivity
+import com.gotellabs.gotel.databinding.ActivityHotelsBinding
+import com.gotellabs.gotel.utils.viewModelOf
 
-class HotelsActivity : BaseActivity() {
+class HotelsActivity : BaseActivity<HotelsViewModel, ActivityHotelsBinding>(), OnItemClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(mViewBinding.root)
 
+    }
+
+    override fun getViewBinding(): ActivityHotelsBinding =
+        ActivityHotelsBinding.inflate(layoutInflater)
+
+    override fun getViewModel(): HotelsViewModel = viewModelOf<HotelsViewModel>(mViewModelProvider)
+    override fun onItemClicked(hotel: HotelModel, imageView: ImageView) {
 
     }
 }
