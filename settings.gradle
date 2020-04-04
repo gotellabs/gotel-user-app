@@ -1,3 +1,4 @@
 rootProject.name='Gotel'
 include ':app'
 include ':domain'
+include ':data'
