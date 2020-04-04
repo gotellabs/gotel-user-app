@@ -15,6 +15,7 @@ object Dependencies{
         const val fFireStore = "21.4.1"
         const val fMessaging = "20.1.3"
         const val fAuth = "19.3.0"
+        const val dagger2 = "2.27"
     }
 
     const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Version.kotlin}"
@@ -32,6 +33,13 @@ object Dependencies{
     const val firebaseFireStore = "com.google.firebase:firebase-firestore:${Version.fFireStore}"
     const val firebaseAuth = "com.google.firebase:firebase-auth:${Version.fAuth}"
     const val firebaseMessaging = "com.google.firebase:firebase-messaging:${Version.fMessaging}"
+
+    const val dagger = "com.google.dagger:dagger:${Version.dagger2}"
+    const val daggerCompiler = "com.google.dagger:dagger-compiler:${Version.dagger2}"
+    const val daggerAndroid = "com.google.dagger:dagger-android:${Version.dagger2}"
+    const val daggerAndroidSupport = "com.google.dagger:dagger-android-support:${Version.dagger2}"
+    const val daggerAndroidProcessor =
+        "com.google.dagger:dagger-android-processor:${Version.dagger2}"
 
 
 }
