@@ -48,11 +48,6 @@ dependencies {
     implementation Dependencies.kotlin
     implementation Dependencies.material
 
-    // Storage with Room
-    implementation Dependencies.roomRuntime
-    kapt Dependencies.roomCompiler
-    implementation Dependencies.roomKtx
-
     // Android core
     implementation Dependencies.appCompat
     implementation Dependencies.constraintLayout
