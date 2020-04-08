@@ -14,9 +14,13 @@ import com.gotellabs.gotel.databinding.HotelItemBinding
 class HotelsViewHolder(private val binding: HotelItemBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(hotelModel: HotelModel, onItemClickListener: OnItemClickListener? = null) {
+    fun bind(
+        hotelModel: HotelModel,
+        onItemClickListener: HotelsAdapter.OnItemClickListener? = null
+    ) {
 
         binding.hotelName.text = hotelModel.name
+        binding.hotelDescription.text = hotelModel.description
 
         onItemClickListener?.let { listener ->
             binding.root.setOnClickListener {
