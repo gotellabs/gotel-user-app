@@ -53,6 +53,10 @@ dependencies {
     implementation Dependencies.constraintLayout
     implementation Dependencies.coreKtx
 
+    // UI
+    implementation Dependencies.swipeRefreshLayout
+
+
     // Firebase
     implementation Dependencies.firebaseFireStore
     implementation Dependencies.firebaseAuth
