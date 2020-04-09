@@ -16,10 +16,10 @@ abstract class HotelDao {
     abstract suspend fun getAll(): List<HotelEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    abstract suspend fun insert()
+    abstract suspend fun insert(hotel: HotelEntity)
 
     @Delete
-    abstract suspend fun delete()
+    abstract suspend fun delete(hotel: HotelEntity)
 
     @Query("DELETE FROM hotel")
     abstract suspend fun deleteAll()
