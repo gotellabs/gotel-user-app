@@ -33,6 +33,10 @@ object Dependencies{
     const val swipeRefreshLayout =
         "androidx.swiperefreshlayout:swiperefreshlayout:${Version.swipeRefresh}"
 
+    const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Version.coroutines}"
+    const val coroutinesAndroid =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Version.coroutines}"
+
     const val appCompat = "androidx.appcompat:appcompat:${Version.appCompat}"
     const val espresso = "androidx.test.espresso:espresso-core:${Version.espresso}"
     const val firebaseFireStore = "com.google.firebase:firebase-firestore:${Version.fFireStore}"
