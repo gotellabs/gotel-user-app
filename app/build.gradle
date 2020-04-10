@@ -56,11 +56,23 @@ dependencies {
     // UI
     implementation Dependencies.swipeRefreshLayout
 
+    // Coroutines
+    implementation Dependencies.coroutines
+    implementation Dependencies.coroutinesAndroid
+
+    // Lifecycle
+    implementation Dependencies.lifecycleLiveData
+    implementation Dependencies.lifecycleViewModel
+
+    //Glide
+    implementation Dependencies.glide
+    annotationProcessor Dependencies.glideCompiler
+
 
     // Firebase
-    implementation Dependencies.firebaseFireStore
-    implementation Dependencies.firebaseAuth
-    implementation Dependencies.firebaseMessaging
+    //    implementation Dependencies.firebaseFireStore
+    //    implementation Dependencies.firebaseAuth
+    //    implementation Dependencies.firebaseMessaging
 
     // Dagger
     implementation Dependencies.dagger

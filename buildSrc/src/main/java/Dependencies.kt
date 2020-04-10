@@ -17,6 +17,8 @@ object Dependencies{
         const val fAuth = "19.3.0"
         const val dagger2 = "2.27"
         const val swipeRefresh = "1.0.0"
+        const val glide = "4.11.0"
+        const val lifecycle = "2.2.0"
     }
 
     const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Version.kotlin}"
@@ -49,6 +51,12 @@ object Dependencies{
     const val daggerAndroidSupport = "com.google.dagger:dagger-android-support:${Version.dagger2}"
     const val daggerAndroidProcessor =
         "com.google.dagger:dagger-android-processor:${Version.dagger2}"
+
+    const val glide = "com.github.bumptech.glide:glide:${Version.glide}"
+    const val glideCompiler = "com.github.bumptech.glide:compiler:${Version.glide}"
+
+    const val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Version.lifecycle}"
+    const val lifecycleLiveData = "androidx.lifecycle:lifecycle-livedata-ktx:${Version.lifecycle}"
 
 
 }
