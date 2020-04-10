@@ -1,5 +1,8 @@
 package com.gotellabs.domain.repository
 
+import com.gotellabs.domain.core.OperationCallback
+import com.gotellabs.domain.model.HotelModel
+
 
 /**
  * Created by Enzo Lizama Paredes on 4/6/20.
@@ -7,4 +10,6 @@ package com.gotellabs.domain.repository
  */
 
 
-interface HotelRepository
+interface HotelRepository {
+    fun retrieveHotels(callback: OperationCallback<HotelModel>)
+}
