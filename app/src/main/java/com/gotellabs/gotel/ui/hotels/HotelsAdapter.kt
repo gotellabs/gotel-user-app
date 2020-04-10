@@ -17,6 +17,7 @@ import com.gotellabs.gotel.databinding.HotelItemBinding
 
 class HotelsAdapter(private val onItemClickListener: OnItemClickListener) :
     ListAdapter<HotelModel, HotelsViewHolder>(DIFF_CALLBACK) {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HotelsViewHolder =
         HotelsViewHolder(
             HotelItemBinding.inflate(
@@ -25,6 +26,7 @@ class HotelsAdapter(private val onItemClickListener: OnItemClickListener) :
                 false
             )
         )
+
 
     override fun onBindViewHolder(holder: HotelsViewHolder, position: Int) =
         holder.bind(getItem(position), onItemClickListener)

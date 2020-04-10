@@ -1,6 +1,7 @@
 package com.gotellabs.gotel.ui.hotels
 
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.gotellabs.domain.model.HotelModel
 import com.gotellabs.gotel.databinding.HotelItemBinding
 
@@ -21,10 +22,11 @@ class HotelsViewHolder(private val binding: HotelItemBinding) :
 
         binding.hotelName.text = hotelModel.name
         binding.hotelDescription.text = hotelModel.description
-
-        onItemClickListener?.let { listener ->
+        Glide.with(binding.hotelItemImageView.context).load(hotelModel.image)
+            .into(binding.hotelItemImageView)
+        onItemClickListener?.let { _ ->
             binding.root.setOnClickListener {
-                listener.onItemClicked(hotelModel, binding.imageView)
+
             }
         }
     }

@@ -33,7 +33,7 @@
             tools:text="@tools:sample/full_names" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/hotelItemImageView"
             style="@style/HotelImage"
             android:layout_width="82sp"
             android:layout_height="82sp"

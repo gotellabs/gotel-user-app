@@ -14,7 +14,6 @@ import javax.inject.Inject
  * Contact: lizama.enzo@gmail.com
  */
 
-
 @ExperimentalCoroutinesApi
 class GotelApp : Application(), HasAndroidInjector {
 

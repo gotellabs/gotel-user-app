@@ -29,7 +29,7 @@ fun Activity.showToast(message: String, duration: Int = Toast.LENGTH_SHORT) {
  *
  * @param id Color identifier from resources files
  */
-fun Activity.getColor(@ColorRes id: Int) = ContextCompat.getColor(applicationContext, id)
+fun Activity.getColorRes(@ColorRes id: Int) = ContextCompat.getColor(applicationContext, id)
 
 
 inline fun <reified VM : ViewModel> AppCompatActivity.viewModelOf(factory: ViewModelProvider.Factory): VM {
