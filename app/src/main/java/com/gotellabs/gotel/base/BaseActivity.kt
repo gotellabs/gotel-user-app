@@ -23,6 +23,7 @@ abstract class BaseActivity<VM : ViewModel, VB : ViewBinding> : AppCompatActivit
     protected lateinit var mViewBinding: VB
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         AndroidInjection.inject(this)
         mViewBinding = getViewBinding()
     }
