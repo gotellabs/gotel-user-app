@@ -1,7 +1,5 @@
 package com.example.upc.data.repository
 
-import com.example.upc.data.mock.MockData
-import com.gotellabs.domain.core.OperationCallback
 import com.gotellabs.domain.model.HotelModel
 import com.gotellabs.domain.repository.HotelRepository
 
@@ -13,13 +11,25 @@ import com.gotellabs.domain.repository.HotelRepository
 
 class HotelRepositoryImpl : HotelRepository {
 
-    override fun retrieveHotels(callback: OperationCallback<HotelModel>) {
-        val mockHotels = MockData.mockHotelList
-        if (mockHotels.isNotEmpty()) {
-            callback.onSuccess(mockHotels)
-        } else {
-            callback.onError("No hay telos :(")
-        }
+//    override fun retrieveHotels(callback: OperationCallback<HotelModel>) {
+//        val mockHotels = MockData.mockHotelList
+//        if (mockHotels.isNotEmpty()) {
+//            callback.onSuccess(mockHotels)
+//        } else {
+//            callback.onError("No hay telos :(")
+//        }
+//    }
+
+    override suspend fun retrieveHotels(): List<HotelModel> {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun searchHotel(params: String): List<HotelModel> {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun retrieveHotelDetail(hotelId: Int): HotelModel {
+        TODO("Not yet implemented")
     }
 
 }
