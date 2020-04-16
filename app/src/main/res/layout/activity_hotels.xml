@@ -20,6 +20,7 @@
             android:background="@color/networkStatusNotConnected"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/hotelRecyclerView"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
