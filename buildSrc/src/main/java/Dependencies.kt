@@ -19,6 +19,10 @@ object Dependencies{
         const val swipeRefresh = "1.0.0"
         const val glide = "4.11.0"
         const val lifecycle = "2.2.0"
+        const val truth = "1.0"
+        const val mockito = "3.2.4"
+        const val robolectric = "4.3"
+        const val mockWebServer = "4.2.1"
     }
 
     const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Version.kotlin}"
@@ -57,6 +61,11 @@ object Dependencies{
 
     const val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Version.lifecycle}"
     const val lifecycleLiveData = "androidx.lifecycle:lifecycle-livedata-ktx:${Version.lifecycle}"
+
+    const val truth = "com.google.truth:truth:${Version.truth}"
+
+    const val mockito = "org.mockito:mockito-core:${Version.mockito}"
+    const val mockWebServer = "com.squareup.okhttp3:mockwebserver:${Version.mockWebServer}"
 
 
 }
