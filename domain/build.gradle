@@ -4,6 +4,7 @@ apply plugin: 'kotlin'
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation Dependencies.kotlin
+    implementation Dependencies.coroutines
 
     // Testing
     testImplementation Dependencies.junit

@@ -8,6 +8,6 @@ import com.gotellabs.domain.repository.HotelRepository
  * Contact: lizama.enzo@gmail.com
  */
 
-class GetHotelsUseCase(private val hotelsRepository: HotelRepository) {
+class RetrieveHotelsUseCase(private val hotelsRepository: HotelRepository) {
     suspend operator fun invoke() = hotelsRepository.retrieveHotels()
 }

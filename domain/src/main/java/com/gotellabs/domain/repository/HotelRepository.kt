@@ -13,6 +13,8 @@ interface HotelRepository {
 
     suspend fun retrieveHotels(): List<HotelModel>
 
+    suspend fun searchHotel(params: String): List<HotelModel>
+
     // TODO: Change the response model from the network call
     suspend fun retrieveHotelDetail(hotelId: Int): HotelModel
 }
