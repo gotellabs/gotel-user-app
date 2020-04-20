@@ -23,7 +23,7 @@ object NetworkUtils {
             context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
 
         val networkCallback = object : ConnectivityManager.NetworkCallback() {
-            override fun onUnavailable() {
+            override fun onLost(network: Network) {
                 networkLiveData.postValue(false)
             }
 

@@ -3,7 +3,6 @@ package com.gotellabs.gotel.ui.hotels
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.os.Bundle
-import android.util.Log
 import android.widget.ImageView
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,7 +12,9 @@ import com.gotellabs.gotel.R
 import com.gotellabs.gotel.base.BaseActivity
 import com.gotellabs.gotel.databinding.ActivityHotelsBinding
 import com.gotellabs.gotel.utils.*
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 
+@ExperimentalCoroutinesApi
 class HotelsActivity : BaseActivity<HotelsViewModel, ActivityHotelsBinding>(),
     HotelsAdapter.OnItemClickListener {
 
@@ -30,13 +31,15 @@ class HotelsActivity : BaseActivity<HotelsViewModel, ActivityHotelsBinding>(),
     private fun handleNetworkChanges() {
         NetworkUtils.getNetworkLiveData(applicationContext).observe(this, Observer { isConnected ->
             if (!isConnected) {
-                mViewBinding.statusTextViewNetworkStatus.text = "No hay conexion"
+                mViewBinding.statusTextViewNetworkStatus.text =
+                    getString(R.string.no_internet_connection)
                 mViewBinding.networkLayoutStatus.apply {
                     show()
                     setBackgroundColor(getColorRes(R.color.networkStatusNotConnected))
                 }
             } else {
-                mViewBinding.statusTextViewNetworkStatus.text = "Si hay conexion a internet"
+                mViewBinding.statusTextViewNetworkStatus.text =
+                    getString(R.string.internet_available)
                 mViewBinding.networkLayoutStatus.apply {
                     setBackgroundColor(getColorRes(R.color.networkStatusConnected))
                     animate().alpha(1f)
@@ -71,9 +74,10 @@ class HotelsActivity : BaseActivity<HotelsViewModel, ActivityHotelsBinding>(),
     override fun getViewBinding(): ActivityHotelsBinding =
         ActivityHotelsBinding.inflate(layoutInflater)
 
-    override fun getViewModel(): HotelsViewModel = viewModelOf<HotelsViewModel>(mViewModelProvider)
+    override fun getViewModel(): HotelsViewModel = viewModelOf(mViewModelProvider)
+
     override fun onItemClicked(hotel: HotelModel, imageView: ImageView) {
-        Log.d("HOTEL DETAIL", hotel.toString())
+        this.showToast("Item clicked")
     }
 
     companion object {

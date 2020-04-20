@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Gotel</string>
     <string name="text_no_connectivity">No hay conexion a internet</string>
+    <string name="no_internet_connection">No hay conexión</string>
+    <string name="internet_available">Si hay conexión a internet</string>
 </resources>
