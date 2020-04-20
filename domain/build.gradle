@@ -1,10 +1,14 @@
 apply plugin: 'java-library'
 apply plugin: 'kotlin'
+apply plugin: 'kotlin-kapt'
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation Dependencies.kotlin
     implementation Dependencies.coroutines
+    implementation Dependencies.dagger
+    kapt Dependencies.daggerCompiler
 
     // Testing
     testImplementation Dependencies.junit

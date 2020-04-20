@@ -2,6 +2,7 @@ package com.example.upc.data.repository
 
 import com.gotellabs.domain.model.HotelModel
 import com.gotellabs.domain.repository.HotelRepository
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 
 
 /**
@@ -9,16 +10,8 @@ import com.gotellabs.domain.repository.HotelRepository
  * Contact: lizama.enzo@gmail.com
  */
 
+@ExperimentalCoroutinesApi
 class HotelRepositoryImpl : HotelRepository {
-
-//    override fun retrieveHotels(callback: OperationCallback<HotelModel>) {
-//        val mockHotels = MockData.mockHotelList
-//        if (mockHotels.isNotEmpty()) {
-//            callback.onSuccess(mockHotels)
-//        } else {
-//            callback.onError("No hay telos :(")
-//        }
-//    }
 
     override suspend fun retrieveHotels(): List<HotelModel> {
         TODO("Not yet implemented")
