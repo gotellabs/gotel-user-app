@@ -1,5 +1,6 @@
 package com.gotellabs.domain.repository
 
+import com.gotellabs.domain.core.OperationCallback
 import com.gotellabs.domain.model.HotelModel
 
 
@@ -11,10 +12,7 @@ import com.gotellabs.domain.model.HotelModel
 
 interface HotelRepository {
 
-    suspend fun retrieveHotels(): List<HotelModel>
+    fun retrieveHotels(callback: OperationCallback<HotelModel>)
+    fun cancel()
 
-    suspend fun searchHotel(params: String): List<HotelModel>
-
-    // TODO: Change the response model from the network call
-    suspend fun retrieveHotelDetail(hotelId: Int): HotelModel
 }
