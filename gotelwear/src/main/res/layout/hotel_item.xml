@@ -22,7 +22,7 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="7dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="70dp"
         android:layout_marginEnd="16dp"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
