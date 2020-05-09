@@ -3,7 +3,6 @@ package com.gotellabs.gotel.ui.hotels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.upc.data.repository.HotelRepositoryImpl
 import com.gotellabs.domain.core.OperationCallback
 import com.gotellabs.domain.model.HotelModel
 import com.gotellabs.domain.repository.HotelRepository
@@ -14,13 +13,7 @@ import com.gotellabs.domain.repository.HotelRepository
  * Contact: lizama.enzo@gmail.com
  */
 
-class HotelsViewModel : ViewModel() {
-
-    init {
-        getHotels()
-    }
-
-    private val repository: HotelRepository = HotelRepositoryImpl()
+class HotelsViewModel(private val repository: HotelRepository) : ViewModel() {
 
     private val _hotels = MutableLiveData<List<HotelModel>>().apply { value = emptyList() }
     val hotels: LiveData<List<HotelModel>> = _hotels

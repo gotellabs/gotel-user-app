@@ -2,7 +2,6 @@ package com.gotellabs.gotel.ui.hotels
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.gotellabs.domain.model.HotelModel
 import com.gotellabs.gotel.databinding.HotelItemBinding
@@ -15,7 +14,7 @@ import com.gotellabs.gotel.databinding.HotelItemBinding
 
 
 class HotelsAdapter(
-    private val hotels: List<HotelModel>,
+    private var hotels: List<HotelModel>,
     private val onItemClickListener: OnItemClickListener
 ) :
     RecyclerView.Adapter<HotelsViewHolder>() {
@@ -31,11 +30,18 @@ class HotelsAdapter(
 
     override fun getItemCount(): Int = hotels.size
 
-    override fun onBindViewHolder(holder: HotelsViewHolder, position: Int) =
+    fun update(data: List<HotelModel>) {
+        hotels = data
+        notifyDataSetChanged()
+    }
+
+    override fun onBindViewHolder(holder: HotelsViewHolder, position: Int) {
         holder.bind(hotels[position], onItemClickListener)
+    }
+
 
     interface OnItemClickListener {
-        fun onItemClicked(hotel: HotelModel, imageView: ImageView)
+        fun onItemClicked(hotel: HotelModel)
     }
 
 

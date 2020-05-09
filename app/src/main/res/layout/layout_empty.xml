@@ -15,12 +15,11 @@
         <ImageView
             android:layout_width="96dp"
             android:layout_height="96dp"
-
             android:adjustViewBounds="true"
             app:srcCompat="@drawable/ic_sentiment_neutral_black_24dp" />
 
         <TextView
-            android:id="@+id/textViewError"
+            android:id="@+id/textViewEmpty"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"

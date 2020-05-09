@@ -8,4 +8,8 @@ import android.app.Application
  * Contact: lizama.enzo@gmail.com
  */
 
+/**
+ * Here if is necessary.
+ *
+ */
 class GotelApp : Application()
