@@ -6,20 +6,23 @@
     android:layout_height="match_parent"
     android:background="@color/dark_grey"
     android:padding="@dimen/box_inset_layout_padding"
-    tools:context=".MainActivity"
+    tools:context=".controllers.HotelsActivity"
     tools:deviceIds="wear">
 
-    <FrameLayout
+    <androidx.wear.widget.BoxInsetLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/inner_frame_layout_padding"
-        app:boxedEdges="all">
+        android:layout_height="match_parent"
+        android:padding="5dp">
 
-        <TextView
-            android:id="@+id/text"
-            android:layout_width="wrap_content"
-            android:layout_gravity="center"
-            android:layout_height="wrap_content"
-            android:text="@string/gotel_name" />
-    </FrameLayout>
+        <!--androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_piezas"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" /-->
+        <androidx.wear.widget.WearableRecyclerView
+            android:id="@+id/hotelRecyclerViewWear"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </androidx.wear.widget.BoxInsetLayout>
+
 </androidx.wear.widget.BoxInsetLayout>
