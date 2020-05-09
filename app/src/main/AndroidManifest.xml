@@ -14,14 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ui.boarding.BoardingActivity"></activity>
-        <activity android:name=".ui.splash.SplashActivity" />
-        <activity android:name=".ui.hotels.HotelsActivity">
+        <activity android:name=".ui.splash.SplashActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN" />s
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.hotels.HotelsActivity"/>
     </application>
 
 </manifest>
