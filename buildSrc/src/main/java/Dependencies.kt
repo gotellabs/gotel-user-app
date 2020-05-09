@@ -23,6 +23,10 @@ object Dependencies{
         const val mockito = "3.2.4"
         const val robolectric = "4.3"
         const val mockWebServer = "4.2.1"
+        const val retrofit2 = "2.3.0"
+        const val okhttp3 = "3.4.1"
+        const val gson = "2.3.0"
+        const val gsonVersion = "2.8.0"
     }
 
     const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Version.kotlin}"
@@ -45,7 +49,7 @@ object Dependencies{
 
     const val appCompat = "androidx.appcompat:appcompat:${Version.appCompat}"
     const val espresso = "androidx.test.espresso:espresso-core:${Version.espresso}"
-    const val firebaseFireStore = "com.google.firebase:firebase-firestore:${Version.fFireStore}"
+
     const val firebaseAuth = "com.google.firebase:firebase-auth:${Version.fAuth}"
     const val firebaseMessaging = "com.google.firebase:firebase-messaging:${Version.fMessaging}"
 
@@ -66,6 +70,11 @@ object Dependencies{
 
     const val mockito = "org.mockito:mockito-core:${Version.mockito}"
     const val mockWebServer = "com.squareup.okhttp3:mockwebserver:${Version.mockWebServer}"
+
+    const val retrofit = "com.squareup.retrofit2:retrofit:${Version.retrofit2}"
+    const val gson = "com.google.code.gson:gson:${Version.gsonVersion}"
+    const val retrofitGson = "com.squareup.retrofit2:converter-gson:${Version.gson}"
+    const val okhttp3 = "com.squareup.okhttp3:logging-interceptor:${Version.okhttp3}"
 
 
 }
