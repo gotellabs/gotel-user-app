@@ -11,15 +11,15 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:padding="@dimen/inner_frame_layout_padding"
         app:boxedEdges="all">
 
         <TextView
             android:id="@+id/text"
             android:layout_width="wrap_content"
+            android:layout_gravity="center"
             android:layout_height="wrap_content"
-            android:text="@string/hello_world" />
-
+            android:text="@string/gotel_name" />
     </FrameLayout>
 </androidx.wear.widget.BoxInsetLayout>
