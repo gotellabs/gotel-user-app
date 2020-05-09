@@ -21,9 +21,16 @@ class HotelsViewHolder(private val binding: HotelItemBinding) :
     ) {
         binding.hotelName.text = hotelModel.name
         binding.hotelDescription.text = hotelModel.description
-        Glide.with(binding.hotelItemImageView.context)
-            .load("https://www.ahstatic.com/photos/9399_ho_00_p_1024x768.jpg")
-            .into(binding.hotelItemImageView)
+        if(hotelModel.photos.isEmpty()){
+            Glide.with(binding.hotelItemImageView.context)
+                .load("https://www.ahstatic.com/photos/9399_ho_00_p_1024x768.jpg")
+                .into(binding.hotelItemImageView)
+        }
+        else{
+            Glide.with(binding.hotelItemImageView.context)
+                .load(hotelModel.photos[0].imageUrl)
+                .into(binding.hotelItemImageView)
+        }
         binding.hotelCardView.setOnClickListener {
             onItemClickListener?.onItemClicked(hotelModel)
         }

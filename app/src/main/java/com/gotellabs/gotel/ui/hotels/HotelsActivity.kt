@@ -1,6 +1,7 @@
 package com.gotellabs.gotel.ui.hotels
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.gotellabs.domain.model.HotelModel
 import com.gotellabs.gotel.R
 import com.gotellabs.gotel.di.ServiceLocator
+import com.gotellabs.gotel.ui.hotel.HotelDetailActivity
 import com.gotellabs.gotel.utils.showToast
 import kotlinx.android.synthetic.main.activity_hotels.*
 import kotlinx.android.synthetic.main.layout_error.*
@@ -88,7 +90,11 @@ class HotelsActivity : AppCompatActivity(), HotelsAdapter.OnItemClickListener {
      * @param hotel Hotel model to send in Json string
      */
     override fun onItemClicked(hotel: HotelModel) {
-        this.showToast("Item clicked")
+
+        val intent = Intent(this, HotelDetailActivity::class.java)
+        intent.putExtra("hotelModel", hotel)
+        startActivity(intent)
+
     }
 
 }
