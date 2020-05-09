@@ -1,5 +1,6 @@
 package com.gotellabs.gotel.ui.hotels
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -60,7 +61,8 @@ class HotelsActivity : AppCompatActivity(), HotelsAdapter.OnItemClickListener {
         progressBar.visibility = visibility
     }
 
-    private val onMessageErrorObserver = Observer<Any> {
+    @SuppressLint("SetTextI18n")
+    private val onMessageErrorObserver = Observer<Any> { it ->
         Log.v(DEBUG_TAG, "onMessageError $it")
         layoutError.visibility = View.VISIBLE
         layoutEmpty.visibility = View.GONE
@@ -81,9 +83,9 @@ class HotelsActivity : AppCompatActivity(), HotelsAdapter.OnItemClickListener {
 
 
     /**
-     * TODO
-     *
-     * @param hotel
+     * Performed when an item is clicked.
+     *  Goes to the hotel detail screen.
+     * @param hotel Hotel model to send in Json string
      */
     override fun onItemClicked(hotel: HotelModel) {
         this.showToast("Item clicked")
