@@ -41,6 +41,12 @@ dependencies {
     kapt "androidx.room:room-compiler:2.2.5"
     implementation "androidx.room:room-runtime:2.2.5"
     implementation "androidx.room:room-ktx:2.2.5"
+    
+    // Retrofit networking
+    implementation Dependencies.retrofit
+    implementation Dependencies.retrofitGson
+    implementation Dependencies.okhttp3
+    implementation Dependencies.gson
 
 //    kapt Dependencies.roomCompiler
 //    implementation Dependencies.roomRuntime
