@@ -30,8 +30,8 @@ class HotelRepositoryImpl : HotelRepository {
             override fun onResponse(call: Call<HotelResponse>, response: Response<HotelResponse>) {
                 response.body()?.let {
                     if (response.isSuccessful && it.isSuccess()) {
-                        Log.v("CONSOLE", "data ${it.hotels}")
-                        callback.onSuccess(it.hotels)
+                        Log.v("CONSOLE", "data ${it.data}")
+                        callback.onSuccess(it.data)
                     } else {
                         callback.onError("OBJECT ERROR")
                     }

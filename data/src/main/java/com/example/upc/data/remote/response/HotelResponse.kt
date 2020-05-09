@@ -8,6 +8,6 @@ import com.gotellabs.domain.model.HotelModel
  * Contact: lizama.enzo@gmail.com
  */
 
-data class HotelResponse(val success: Boolean, val hotels: List<HotelModel>) {
+data class HotelResponse(val success: Boolean, val data: List<HotelModel>) {
     fun isSuccess(): Boolean = success
 }
