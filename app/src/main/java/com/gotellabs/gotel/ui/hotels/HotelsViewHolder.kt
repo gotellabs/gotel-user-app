@@ -19,7 +19,6 @@ class HotelsViewHolder(private val binding: HotelItemBinding) :
         hotelModel: HotelModel,
         onItemClickListener: HotelsAdapter.OnItemClickListener? = null
     ) {
-
         binding.hotelName.text = hotelModel.name
         binding.hotelDescription.text = hotelModel.description
         Glide.with(binding.hotelItemImageView.context).load(hotelModel.image)

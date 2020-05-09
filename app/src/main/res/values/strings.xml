@@ -3,4 +3,6 @@
     <string name="text_no_connectivity">No hay conexion a internet</string>
     <string name="no_internet_connection">No hay conexión</string>
     <string name="internet_available">Si hay conexión a internet</string>
+    <string name="an_error_occurred">Ocurrio un error :(</string>
+    <string name="empty_list">No hay hoteles disponibeles</string>
 </resources>

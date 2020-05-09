@@ -12,25 +12,6 @@
         android:animateLayoutChanges="true"
         tools:context=".ui.hotels.HotelsActivity">
 
-        <LinearLayout
-            android:id="@+id/networkLayoutStatus"
-            style="@style/StatusView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/networkStatusNotConnected"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/hotelRecyclerView"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:id="@+id/statusTextViewNetworkStatus"
-                style="@style/StatusTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="@string/text_no_connectivity" />
-        </LinearLayout>
-
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/hotelRecyclerView"
@@ -39,8 +20,48 @@
             android:layout_height="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintEnd_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/networkLayoutStatus"
+            app:layout_constraintTop_toTopOf="parent"
             tools:listitem="@layout/hotel_item" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+
+        <include
+            android:id="@+id/layoutError"
+            layout="@layout/layout_error"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+        <include
+            android:id="@+id/layoutEmpty"
+            layout="@layout/layout_empty"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

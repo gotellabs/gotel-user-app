@@ -3,8 +3,7 @@ package com.gotellabs.gotel.ui.hotels
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
 import com.gotellabs.domain.model.HotelModel
 import com.gotellabs.gotel.databinding.HotelItemBinding
 
@@ -15,8 +14,11 @@ import com.gotellabs.gotel.databinding.HotelItemBinding
  */
 
 
-class HotelsAdapter(private val onItemClickListener: OnItemClickListener) :
-    ListAdapter<HotelModel, HotelsViewHolder>(DIFF_CALLBACK) {
+class HotelsAdapter(
+    private val hotels: List<HotelModel>,
+    private val onItemClickListener: OnItemClickListener
+) :
+    RecyclerView.Adapter<HotelsViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HotelsViewHolder =
         HotelsViewHolder(
@@ -27,26 +29,15 @@ class HotelsAdapter(private val onItemClickListener: OnItemClickListener) :
             )
         )
 
+    override fun getItemCount(): Int = hotels.size
 
     override fun onBindViewHolder(holder: HotelsViewHolder, position: Int) =
-        holder.bind(getItem(position), onItemClickListener)
+        holder.bind(hotels[position], onItemClickListener)
 
     interface OnItemClickListener {
         fun onItemClicked(hotel: HotelModel, imageView: ImageView)
     }
 
-    companion object {
-        private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<HotelModel>() {
-            override fun areItemsTheSame(oldItem: HotelModel, newItem: HotelModel): Boolean {
-                return oldItem.id == newItem.id
-            }
-
-            override fun areContentsTheSame(oldItem: HotelModel, newItem: HotelModel): Boolean {
-                return oldItem == newItem
-            }
-
-        }
-    }
 
 }
 
