@@ -1,11 +1,10 @@
-package com.gotellabs.gotel.ui.hotel
+package com.gotellabs.gotel.ui.detail
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.gotellabs.domain.model.HotelModel
 import com.gotellabs.gotel.R
-import com.gotellabs.gotel.utils.showToast
 import kotlinx.android.synthetic.main.activity_hotel_detail.*
 
 class HotelDetailActivity : AppCompatActivity() {
@@ -40,6 +39,7 @@ class HotelDetailActivity : AppCompatActivity() {
         hotelName.text=hotel.name
         hotelDescription.text=hotel.description
         hotelPhone.text=hotel.phone
+        hotelAddress.text = hotel.address!!.street + hotel.address!!.number
         hotelRate.text=hotel.rate
     }
 }

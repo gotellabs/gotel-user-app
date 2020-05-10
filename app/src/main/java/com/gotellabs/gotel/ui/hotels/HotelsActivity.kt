@@ -12,8 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.gotellabs.domain.model.HotelModel
 import com.gotellabs.gotel.R
 import com.gotellabs.gotel.di.ServiceLocator
-import com.gotellabs.gotel.ui.hotel.HotelDetailActivity
-import com.gotellabs.gotel.utils.showToast
+import com.gotellabs.gotel.ui.detail.HotelDetailActivity
 import kotlinx.android.synthetic.main.activity_hotels.*
 import kotlinx.android.synthetic.main.layout_error.*
 

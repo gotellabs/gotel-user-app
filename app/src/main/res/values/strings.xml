@@ -5,4 +5,10 @@
     <string name="internet_available">Si hay conexión a internet</string>
     <string name="an_error_occurred">Ocurrio un error :(</string>
     <string name="empty_list">No hay hoteles disponibeles</string>
+    <string name="mock_address_text">Address</string>
+    <string name="mock_rate_text">Rate</string>
+    <string name="mock_phone_text">Telefono:</string>
+    <string name="mock_calification_text">Calificacion:</string>
+    <string name="mock_description_text">Description</string>
+    <string name="mock_name_text">Name</string>
 </resources>

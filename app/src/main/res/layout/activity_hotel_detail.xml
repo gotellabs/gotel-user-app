@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
@@ -22,11 +21,12 @@
 
         <TextView
             android:id="@+id/hotelName"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="9dp"
-            android:text="Name"
+            android:layout_marginHorizontal="@dimen/dimen_24"
             android:textSize="20sp"
+            android:text="@string/mock_name_text"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -34,60 +34,73 @@
 
         <TextView
             android:id="@+id/hotelDescription"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="Description"
+            android:layout_marginHorizontal="@dimen/dimen_24"
+            android:layout_marginTop="@dimen/dimen_24"
+            android:text="@string/mock_description_text"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.491"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/hotelName" />
+
+        <TextView
+            android:id="@+id/hotelAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_24"
+            android:layout_marginVertical="@dimen/dimen_8"
+            android:text="@string/mock_address_text"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@id/hotelPhone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/hotelDescription" />
 
         <TextView
             android:id="@+id/hotelPhone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="12dp"
-            android:text="Phone"
+            android:layout_marginStart="@dimen/dimen_8"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:text="@string/mock_phone_text"
             android:textSize="16sp"
-            app:layout_constraintStart_toEndOf="@+id/textView"
-            app:layout_constraintTop_toBottomOf="@+id/hotelDescription" />
+            app:layout_constraintStart_toEndOf="@+id/textViewPhone"
+            app:layout_constraintTop_toBottomOf="@+id/hotelAddress" />
 
         <TextView
             android:id="@+id/hotelRate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="@dimen/dimen_16"
             android:layout_marginEnd="56dp"
-            android:text="Rate"
+            android:text="@string/mock_rate_text"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.087"
-            app:layout_constraintStart_toEndOf="@+id/textView2"
-            app:layout_constraintTop_toBottomOf="@+id/hotelDescription"
+            app:layout_constraintStart_toEndOf="@+id/textViewRate"
+            app:layout_constraintTop_toBottomOf="@+id/hotelAddress"
             app:layout_constraintVertical_bias="1.0" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textViewPhone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="120dp"
-            android:layout_marginTop="12dp"
-            android:text="Telefono:"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:text="@string/mock_phone_text"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/hotelDescription" />
+            app:layout_constraintTop_toBottomOf="@+id/hotelAddress" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textViewRate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="128dp"
-            android:layout_marginTop="16dp"
-            android:text="Calificacion:"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:text="@string/mock_calification_text"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/hotelPhone" />

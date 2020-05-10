@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/ic_gotel"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.hotel.HotelDetailActivity" />
+        <activity
+            android:name=".ui.detail.HotelDetailActivity"
+            android:parentActivityName=".ui.hotels.HotelsActivity" />
         <activity android:name=".ui.boarding.BoardingActivity" />
         <activity
             android:name=".ui.splash.SplashActivity"
