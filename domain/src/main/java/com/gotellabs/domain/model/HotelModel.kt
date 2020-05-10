@@ -8,5 +8,6 @@ data class HotelModel(
     val description: String,
     val phone: String? = "97012921",
     val rate: String? = "5.0",
+    val address: Address? = null,
     val photos: ArrayList<PhotoModel> = ArrayList<PhotoModel>()
 ) : Serializable
