@@ -3,7 +3,6 @@ package com.gotellabs.gotel.ui.hotels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.gotellabs.domain.core.OperationCallback
 import com.gotellabs.domain.model.HotelModel
 import com.gotellabs.domain.repository.HotelRepository
 
@@ -29,22 +28,6 @@ class HotelsViewModel(private val repository: HotelRepository) : ViewModel() {
 
     fun getHotels() {
         _isViewLoading.postValue(true)
-        repository.retrieveHotels(object : OperationCallback<HotelModel> {
-            override fun onSuccess(data: List<HotelModel>) {
-                _isViewLoading.postValue(false)
-                if (data.isEmpty()) {
-                    _isEmptyList.postValue(true)
-                } else {
-                    _hotels.value = data
-                }
-            }
-
-            override fun onError(error: String?) {
-                _isViewLoading.postValue(false)
-                _onMessageError.postValue(error)
-            }
-
-        })
     }
 
 }
