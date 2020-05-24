@@ -1,5 +1,6 @@
 package com.example.upc.data.remote.response
 
+import com.google.gson.annotations.SerializedName
 import com.gotellabs.domain.model.HotelModel
 
 
@@ -8,6 +9,9 @@ import com.gotellabs.domain.model.HotelModel
  * Contact: lizama.enzo@gmail.com
  */
 
-data class HotelResponse(val success: Boolean, val data: List<HotelModel>) {
-    fun isSuccess(): Boolean = success
-}
+data class HotelResponse(
+    @SerializedName("success")
+    val success: Boolean,
+    @SerializedName("data")
+    val data: List<HotelModel>
+)

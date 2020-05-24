@@ -1,14 +1,8 @@
 package com.example.upc.data.repository
 
-import android.util.Log
-import com.example.upc.data.remote.ApiClient
-import com.example.upc.data.remote.response.HotelResponse
-import com.gotellabs.domain.core.OperationCallback
+import com.gotellabs.domain.core.Result
 import com.gotellabs.domain.model.HotelModel
 import com.gotellabs.domain.repository.HotelRepository
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 
 /**
@@ -16,32 +10,38 @@ import retrofit2.Response
  * Contact: lizama.enzo@gmail.com
  */
 
-class HotelRepositoryImpl : HotelRepository {
+class HotelRepositoryImpl(
+    private val hotelRemoteDataSource: HotelRemoteDataSource,
+    private val hotelLocalDataSource: HotelLocalDataSource
+) : HotelRepository {
 
-    private lateinit var api: Call<HotelResponse>
-    override fun retrieveHotels(callback: OperationCallback<HotelModel>) {
-        api = ApiClient.build().fetchHotels()
-        api.enqueue(object : Callback<HotelResponse> {
 
-            override fun onFailure(call: Call<HotelResponse>, t: Throwable) {
-                callback.onError(t.message)
-            }
-
-            override fun onResponse(call: Call<HotelResponse>, response: Response<HotelResponse>) {
-                response.body()?.let {
-                    if (response.isSuccessful && it.isSuccess()) {
-                        Log.v("CONSOLE", "data ${it.data}")
-                        callback.onSuccess(it.data)
-                    } else {
-                        callback.onError("OBJECT ERROR")
-                    }
-                }
-            }
-
-        })
+    override suspend fun retrieveHotels(): Result<List<HotelModel>> {
+        return getHotelsFromLocalDataSource()
     }
 
-    override fun cancel() {
-        api.cancel()
+
+    private suspend fun getHotelsFromLocalDataSource(): Result<List<HotelModel>> {
+        return when (val result = hotelLocalDataSource.getHotels()) {
+            is Result.Success -> {
+                result
+            }
+            is Result.Error -> {
+                getHotelsFromRemoteDataSource()
+            }
+        }
     }
+
+    private suspend fun getHotelsFromRemoteDataSource(): Result<List<HotelModel>> {
+        val result = hotelRemoteDataSource.getHotels()
+        if (result is Result.Success) {
+            updateLocalHotels(hotels = result.data)
+        }
+        return result
+    }
+
+    private fun updateLocalHotels(hotels: List<HotelModel>) {
+        hotelLocalDataSource.saveHotels(hotels)
+    }
+
 }
