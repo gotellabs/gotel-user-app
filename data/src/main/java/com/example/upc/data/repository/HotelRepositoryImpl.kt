@@ -1,7 +1,7 @@
 package com.example.upc.data.repository
 
 import com.gotellabs.domain.core.Result
-import com.gotellabs.domain.model.HotelModel
+import com.gotellabs.domain.model.Hotel
 import com.gotellabs.domain.repository.HotelRepository
 
 
@@ -11,17 +11,15 @@ import com.gotellabs.domain.repository.HotelRepository
  */
 
 class HotelRepositoryImpl(
-    private val hotelRemoteDataSource: HotelRemoteDataSource,
-    private val hotelLocalDataSource: HotelLocalDataSource
+    private val hotelRemoteDataSource: HotelDataSource.Remote,
+    private val hotelLocalDataSource: HotelDataSource.Local
 ) : HotelRepository {
 
-
-    override suspend fun retrieveHotels(): Result<List<HotelModel>> {
+    override suspend fun retrieveHotels(): Result<List<Hotel>> {
         return getHotelsFromLocalDataSource()
     }
 
-
-    private suspend fun getHotelsFromLocalDataSource(): Result<List<HotelModel>> {
+    private suspend fun getHotelsFromLocalDataSource(): Result<List<Hotel>> {
         return when (val result = hotelLocalDataSource.getHotels()) {
             is Result.Success -> {
                 result
@@ -32,7 +30,7 @@ class HotelRepositoryImpl(
         }
     }
 
-    private suspend fun getHotelsFromRemoteDataSource(): Result<List<HotelModel>> {
+    private suspend fun getHotelsFromRemoteDataSource(): Result<List<Hotel>> {
         val result = hotelRemoteDataSource.getHotels()
         if (result is Result.Success) {
             updateLocalHotels(hotels = result.data)
@@ -40,7 +38,7 @@ class HotelRepositoryImpl(
         return result
     }
 
-    private fun updateLocalHotels(hotels: List<HotelModel>) {
+    private fun updateLocalHotels(hotels: List<Hotel>) {
         hotelLocalDataSource.saveHotels(hotels)
     }
 

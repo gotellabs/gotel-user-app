@@ -1,7 +1,7 @@
 package com.example.upc.data.repository
 
 import com.gotellabs.domain.core.Result
-import com.gotellabs.domain.model.HotelModel
+import com.gotellabs.domain.model.Hotel
 
 
 /**
@@ -11,12 +11,10 @@ import com.gotellabs.domain.model.HotelModel
 
 interface HotelDataSource {
     interface Remote {
-        suspend fun getHotels(): Result<List<HotelModel>>
+        suspend fun getHotels(): Result<List<Hotel>>
     }
 
     interface Local : Remote {
-        fun saveHotels(hotels: List<HotelModel>)
+        fun saveHotels(hotels: List<Hotel>)
     }
-
-
 }

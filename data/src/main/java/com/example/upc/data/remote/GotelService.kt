@@ -1,7 +1,7 @@
 package com.example.upc.data.remote
 
 import com.example.upc.data.remote.response.HotelResponse
-import retrofit2.Call
+import kotlinx.coroutines.Deferred
 import retrofit2.http.GET
 
 
@@ -11,7 +11,7 @@ import retrofit2.http.GET
  */
 
 
-interface RetrofitService {
+interface GotelService {
     @GET("/webApi/hotels/fetch")
-    fun fetchHotels(): Call<HotelResponse>
+    fun fetchHotelsAsync(): Deferred<HotelResponse>
 }

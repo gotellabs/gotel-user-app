@@ -12,12 +12,12 @@ import retrofit2.converter.gson.GsonConverterFactory
  */
 
 
-object ApiClient {
+object GotelApiClient {
     private const val BASE_URL = "https://us-central1-gotel-api.cloudfunctions.net"
 
-    private lateinit var retrofitApi: RetrofitService
+    private lateinit var gotelApi: GotelService
 
-    fun build(): RetrofitService {
+    fun build(): GotelService {
         val builder: Retrofit.Builder = Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
@@ -26,8 +26,8 @@ object ApiClient {
         httpClient.addInterceptor(interceptor())
 
         val retrofit: Retrofit = builder.client(httpClient.build()).build()
-        retrofitApi = retrofit.create(RetrofitService::class.java)
-        return retrofitApi
+        gotelApi = retrofit.create(GotelService::class.java)
+        return gotelApi
     }
 
     private fun interceptor(): HttpLoggingInterceptor {

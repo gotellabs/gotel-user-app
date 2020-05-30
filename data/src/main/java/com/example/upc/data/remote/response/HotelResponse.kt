@@ -1,7 +1,7 @@
 package com.example.upc.data.remote.response
 
 import com.google.gson.annotations.SerializedName
-import com.gotellabs.domain.model.HotelModel
+import com.gotellabs.domain.model.Hotel
 
 
 /**
@@ -13,5 +13,5 @@ data class HotelResponse(
     @SerializedName("success")
     val success: Boolean,
     @SerializedName("data")
-    val data: List<HotelModel>
+    val data: List<Hotel>
 )

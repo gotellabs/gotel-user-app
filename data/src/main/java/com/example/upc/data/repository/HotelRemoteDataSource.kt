@@ -1,7 +1,8 @@
 package com.example.upc.data.repository
 
+import com.example.upc.data.remote.GotelService
 import com.gotellabs.domain.core.Result
-import com.gotellabs.domain.model.HotelModel
+import com.gotellabs.domain.model.Hotel
 
 
 /**
@@ -9,9 +10,14 @@ import com.gotellabs.domain.model.HotelModel
  * Contact: lizama.enzo@gmail.com
  */
 
-class HotelRemoteDataSource : HotelDataSource.Remote {
-    override suspend fun getHotels(): Result<List<HotelModel>> {
-        TODO("Not yet implemented")
+class HotelRemoteDataSource(private val hotelApi: GotelService) : HotelDataSource.Remote {
+    override suspend fun getHotels(): Result<List<Hotel>> {
+        return try {
+            val result = hotelApi.fetchHotelsAsync().await()
+            Result.Success(result.data)
+        } catch (e: Exception) {
+            Result.Error(e)
+        }
     }
 
 }
