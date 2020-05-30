@@ -1,6 +1,6 @@
 package com.gotellabs.domain.usecases
 
-import com.gotellabs.domain.model.HotelModel
+import com.gotellabs.domain.model.Hotel
 import org.junit.Assert.assertNotNull
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -17,14 +17,13 @@ class HotelModelTest {
 
     @Test
     fun hotelModelAttributesValidation() {
-        val hotel = HotelModel(
+        val hotel = Hotel(
             _id = "id test",
             name = "name test",
             description = "description test",
-            image = "image test",
             phone = "phone test",
             rate = "rate test"
         )
-        assertNotNull(hotel)
+        assertNotNull(hotel.name)
     }
 }

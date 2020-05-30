@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import com.gotellabs.gotel.R
-import com.gotellabs.gotel.ui.hotels.HotelsActivity
+import com.gotellabs.gotel.ui.feed.HotelsActivity
 
 
 class SplashActivity : AppCompatActivity() {

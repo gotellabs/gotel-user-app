@@ -15,7 +15,7 @@ object Dependencies{
         const val fFireStore = "21.4.1"
         const val fMessaging = "20.1.3"
         const val fAuth = "19.3.0"
-        const val dagger2 = "2.27"
+        const val dagger2 = "2.23.1"
         const val swipeRefresh = "1.0.0"
         const val glide = "4.11.0"
         const val lifecycle = "2.2.0"
