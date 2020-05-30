@@ -2,12 +2,12 @@ package com.gotellabs.domain.model
 
 import java.io.Serializable
 
-data class HotelModel(
+data class Hotel(
     val _id: String,
     val name: String,
     val description: String,
     val phone: String? = "97012921",
     val rate: String? = "5.0",
     val address: Address? = null,
-    val photos: ArrayList<PhotoModel> = ArrayList<PhotoModel>()
+    val hotelPhotos: ArrayList<HotelPhoto> = ArrayList<HotelPhoto>()
 ) : Serializable

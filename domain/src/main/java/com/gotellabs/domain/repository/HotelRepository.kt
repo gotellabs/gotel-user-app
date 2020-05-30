@@ -1,7 +1,7 @@
 package com.gotellabs.domain.repository
 
 import com.gotellabs.domain.core.Result
-import com.gotellabs.domain.model.HotelModel
+import com.gotellabs.domain.model.Hotel
 
 
 /**
@@ -11,5 +11,5 @@ import com.gotellabs.domain.model.HotelModel
 
 
 interface HotelRepository {
-    suspend fun retrieveHotels(): Result<List<HotelModel>>
+    suspend fun retrieveHotels(): Result<List<Hotel>>
 }

@@ -1,7 +1,7 @@
 package com.gotellabs.domain.usecase
 
 import com.gotellabs.domain.core.Result
-import com.gotellabs.domain.model.HotelModel
+import com.gotellabs.domain.model.Hotel
 import com.gotellabs.domain.repository.HotelRepository
 
 
@@ -11,7 +11,7 @@ import com.gotellabs.domain.repository.HotelRepository
  */
 
 open class GetHotelsUseCase(private val hotelRepository: HotelRepository) {
-    suspend fun execute(): Result<List<HotelModel>> {
+    suspend fun execute(): Result<List<Hotel>> {
         return hotelRepository.retrieveHotels()
     }
 }
