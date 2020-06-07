@@ -100,7 +100,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="128dp"
             android:layout_marginTop="@dimen/dimen_16"
-            android:text="@string/mock_calification_text"
+            android:text="@string/mock_qualification_text"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/hotelPhone" />

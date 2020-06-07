@@ -6,4 +6,6 @@
     <color name="textColor">#000</color>
     <color name="networkStatusConnected">#43A047</color>
     <color name="networkStatusNotConnected">#D32F2F</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
 </resources>

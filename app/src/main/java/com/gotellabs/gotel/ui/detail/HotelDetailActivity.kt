@@ -14,7 +14,6 @@ class HotelDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hotel_detail)
         hotel = intent.extras!!.get("hotelModel") as Hotel
-
         initUI()
     }
 
