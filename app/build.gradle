@@ -16,7 +16,16 @@ android {
         versionName Config.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        def properties = new Properties()
+        if (project.rootProject.file('local.properties').canRead()) {
+            properties.load(project.rootProject.file("local.properties").newDataInputStream())
+        }
+
+        buildConfigField 'String', 'MAPBOX_TOKEN', properties.getProperty('MAPBOX_TOKEN')
     }
+
+
 
     buildTypes {
         release {
@@ -92,6 +101,9 @@ dependencies {
     implementation Dependencies.daggerAndroidSupport
     kapt Dependencies.daggerCompiler
     kapt Dependencies.daggerAndroidProcessor
+
+    implementation 'com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.42.6'
+
 
     // Testing
     testImplementation Dependencies.junit
