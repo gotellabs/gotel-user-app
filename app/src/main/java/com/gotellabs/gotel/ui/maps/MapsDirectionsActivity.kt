@@ -37,8 +37,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 
-class MapsDirectionsActivity : AppCompatActivity(), OnMapReadyCallback,
-    MapboxMap.OnMapClickListener, PermissionsListener {
+class MapsDirectionsActivity : AppCompatActivity(), OnMapReadyCallback, PermissionsListener {
 
     private lateinit var mapView: MapView
     private lateinit var mapboxMap: MapboxMap
@@ -48,15 +47,35 @@ class MapsDirectionsActivity : AppCompatActivity(), OnMapReadyCallback,
     private lateinit var currentRoute: DirectionsRoute
     private lateinit var navigationMapRoute: NavigationMapRoute
 
+    private lateinit var lat: String
+    private lateinit var lng: String
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        lat = intent.extras!!.get("lat") as String
+        lng = intent.extras!!.get("lng") as String
+
         mapboxToken = BuildConfig.MAPBOX_TOKEN
         Mapbox.getInstance(this, mapboxToken)
         setContentView(R.layout.activity_maps_directions)
         mapView = findViewById<MapView>(R.id.mapView)
         mapView.onCreate(savedInstanceState)
         mapView.getMapAsync(this)
+
+        val destinationPoint = Point.fromLngLat(lng.toDouble(), lat.toDouble())
+        val originPoint = Point.fromLngLat(
+            locationComponent.lastKnownLocation!!.longitude,
+            locationComponent.lastKnownLocation!!.latitude
+        )
+
+        val source =
+            mapboxMap.style!!.getSourceAs<GeoJsonSource>("destination-source-id")
+        source?.setGeoJson(Feature.fromGeometry(destinationPoint))
+
+        getRoute(originPoint, destinationPoint)
+        maps_directions_button.isEnabled = true
     }
 
     override fun onMapReady(mapboxMap: MapboxMap) {
@@ -66,7 +85,6 @@ class MapsDirectionsActivity : AppCompatActivity(), OnMapReadyCallback,
         ) {
             enableLocationComponent(it)
             addDestinationIconSymbolLayer(it)
-            mapboxMap.addOnMapClickListener(this)
             maps_directions_button.setOnClickListener {
                 val simulateRoute = true
                 val options: NavigationLauncherOptions = NavigationLauncherOptions.builder()
@@ -113,23 +131,6 @@ class MapsDirectionsActivity : AppCompatActivity(), OnMapReadyCallback,
                     }
                 })
         }
-    }
-
-    override fun onMapClick(point: LatLng): Boolean {
-        val destinationPoint =
-            Point.fromLngLat(point.longitude, point.latitude)
-        val originPoint = Point.fromLngLat(
-            locationComponent.lastKnownLocation!!.longitude,
-            locationComponent.lastKnownLocation!!.latitude
-        )
-
-        val source =
-            mapboxMap.style!!.getSourceAs<GeoJsonSource>("destination-source-id")
-        source?.setGeoJson(Feature.fromGeometry(destinationPoint))
-
-        getRoute(originPoint, destinationPoint)
-        maps_directions_button.isEnabled = true
-        return true
     }
 
     private fun addDestinationIconSymbolLayer(loadedMapStyle: Style) {
