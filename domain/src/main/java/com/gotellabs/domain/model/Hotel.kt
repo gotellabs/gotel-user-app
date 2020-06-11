@@ -9,5 +9,5 @@ data class Hotel(
     val phone: String? = "97012921",
     val rate: String? = "5.0",
     val address: Address? = null,
-    val hotelPhotos: ArrayList<HotelPhoto> = ArrayList<HotelPhoto>()
+    val photos: ArrayList<HotelPhoto> = ArrayList<HotelPhoto>()
 ) : Serializable

@@ -19,10 +19,10 @@ class HotelDetailActivity : AppCompatActivity() {
     }
 
     private fun initUI() {
-        if (hotel.hotelPhotos.isNotEmpty()) {
+        if (hotel.photos.isNotEmpty()) {
             Glide
                 .with(this)
-                .load(hotel.hotelPhotos[0].imageUrl)
+                .load(hotel.photos[0].imageUrl)
                 .centerCrop()
                 .placeholder(R.mipmap.ic_launcher)
                 .into(hotelImageView)
@@ -38,7 +38,6 @@ class HotelDetailActivity : AppCompatActivity() {
         hotelName.text = hotel.name
         hotelDescription.text = hotel.description
         hotelPhone.text = hotel.phone
-
         hotelRate.text = hotel.rate
     }
 }
