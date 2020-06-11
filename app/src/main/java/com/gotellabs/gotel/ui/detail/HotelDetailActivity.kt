@@ -38,7 +38,7 @@ class HotelDetailActivity : AppCompatActivity() {
         hotelName.text = hotel.name
         hotelDescription.text = hotel.description
         hotelPhone.text = hotel.phone
-        hotelAddress.text = hotel.address!!.street
+
         hotelRate.text = hotel.rate
     }
 }
