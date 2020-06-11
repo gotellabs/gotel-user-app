@@ -29,7 +29,7 @@ class HotelDetailActivity : AppCompatActivity() {
         } else {
             Glide
                 .with(this)
-                .load("https://www.ahstatic.com/hotelPhotos/9399_ho_00_p_1024x768.jpg")
+                .load("https://r-cf.bstatic.com/images/hotel/max1024x768/210/210875998.jpg")
                 .centerCrop()
                 .placeholder(R.mipmap.ic_launcher)
                 .into(hotelImageView)

@@ -16,7 +16,8 @@ class HotelRepositoryImpl(
 ) : HotelRepository {
 
     override suspend fun retrieveHotels(): Result<List<Hotel>> {
-        return getHotelsFromLocalDataSource()
+        // TODO: IMPLEMENT A WAY TO USE LOCAL DATA SOURCE WHEN ITS OFFLINE
+        return getHotelsFromRemoteDataSource()
     }
 
     private suspend fun getHotelsFromLocalDataSource(): Result<List<Hotel>> {

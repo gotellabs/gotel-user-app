@@ -6,8 +6,8 @@ data class Hotel(
     val _id: String,
     val name: String,
     val description: String,
-    val phone: String? = "97012921",
-    val rate: String? = "5.0",
-    val address: Address? = null,
-    val photos: ArrayList<HotelPhoto> = ArrayList<HotelPhoto>()
+    val phone: String = "12345678",
+    val rate: String = "4.5",
+    val address: Address = Address(),
+    val photos: List<HotelPhoto> = listOf()
 ) : Serializable

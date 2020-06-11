@@ -23,11 +23,13 @@ class HotelsViewHolder(private val binding: HotelItemBinding) :
         binding.hotelDescription.text = hotel.description
         if (hotel.photos.isEmpty()) {
             Glide.with(binding.hotelItemImageView.context)
-                .load("https://www.ahstatic.com/hotelPhotos/9399_ho_00_p_1024x768.jpg")
+                .load("https://r-cf.bstatic.com/images/hotel/max1024x768/210/210875998.jpg")
+                .centerCrop()
                 .into(binding.hotelItemImageView)
         } else {
             Glide.with(binding.hotelItemImageView.context)
                 .load(hotel.photos[0].imageUrl)
+                .centerCrop()
                 .into(binding.hotelItemImageView)
         }
         binding.hotelCardView.setOnClickListener {

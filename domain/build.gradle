@@ -10,6 +10,8 @@ dependencies {
     implementation Dependencies.dagger
     kapt Dependencies.daggerCompiler
 
+    implementation Dependencies.gson
+
     // Testing
     testImplementation Dependencies.junit
     testImplementation Dependencies.mockito
