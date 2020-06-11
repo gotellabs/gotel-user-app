@@ -51,5 +51,4 @@ class HotelWearAdapter(
         return hotels.size
     }
 
-
 }
