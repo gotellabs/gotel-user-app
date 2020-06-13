@@ -4,13 +4,13 @@
     <string name="no_internet_connection">No hay conexión</string>
     <string name="internet_available">Si hay conexión a internet</string>
     <string name="an_error_occurred">Ocurrio un error :(</string>
-    <string name="empty_list">No hay hoteles disponibeles</string>
-    <string name="mock_address_text">Address</string>
-    <string name="mock_rate_text">Rate</string>
-    <string name="mock_phone_text">Telefono:</string>
-    <string name="mock_qualification_text">Calificacion:</string>
-    <string name="mock_description_text">Description</string>
-    <string name="mock_name_text">Name</string>
+    <string name="empty_list">No hay hoteles disponibles</string>
+    <string name="mock_address_text">Dirección</string>
+    <string name="mock_rate_text">Puntaje</string>
+    <string name="mock_phone_text">Telefono</string>
+    <string name="mock_description_text">Descripción</string>
+    <string name="mock_name_text">Nombre</string>
     <string name="mock_go_to_hotel_text">Ir al hotel</string>
     <string name="user_location_permission_explanation">Necesitamos permisos para poder mostrarte los hoteles mas cercanos</string>
+    <string name="mock_qualification_text">Calificación</string>
 </resources>

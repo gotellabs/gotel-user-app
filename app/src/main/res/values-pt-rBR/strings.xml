@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gotel</string>
+    <string name="text_no_connectivity">Não há conexão com a Internet</string>
+    <string name="no_internet_connection">Sem conexão</string>
+    <string name="internet_available">Existe conexão com a Internet</string>
+    <string name="an_error_occurred">Um erro ocorreu :(</string>
+    <string name="empty_list">Não há hotéis disponíveis</string>
+    <string name="mock_address_text">Endereço</string>
+    <string name="mock_rate_text">Ponto</string>
+    <string name="mock_qualification_text">Qualificação</string>
+    <string name="mock_phone_text">Telefone</string>
+    <string name="mock_description_text">Descrição</string>
+    <string name="mock_name_text">Nome</string>
+    <string name="mock_go_to_hotel_text">Ir para o hotel</string>
+    <string name="user_location_permission_explanation">Precisamos de licenças para mostrar os hotéis mais próximos</string>
+</resources>
