@@ -25,6 +25,10 @@ class HotelDetailActivity : AppCompatActivity() {
             intent.putExtra("lng", hotel.address.lng)
             startActivity(intent)
         }
+
+        hotelPhone.setOnClickListener {
+
+        }
     }
 
     private fun initUI() {
