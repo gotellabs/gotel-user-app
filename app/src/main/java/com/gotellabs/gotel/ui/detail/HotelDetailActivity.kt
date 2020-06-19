@@ -1,6 +1,7 @@
 package com.gotellabs.gotel.ui.detail
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
@@ -27,7 +28,8 @@ class HotelDetailActivity : AppCompatActivity() {
         }
 
         hotelPhone.setOnClickListener {
-
+            val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + hotelPhone.text.toString()) )
+            startActivity(intent)
         }
     }
 
