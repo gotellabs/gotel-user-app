@@ -17,6 +17,7 @@ import com.google.firebase.auth.GoogleAuthProvider
 
 import com.gotellabs.gotel.R
 import com.gotellabs.gotel.base.BaseActivity
+import com.gotellabs.gotel.ui.feed.HotelsActivity
 import kotlinx.android.synthetic.main.activity_login.*
 
 const val RC_SIGN_IN = 123
@@ -69,6 +70,8 @@ class LoginActivity : AppCompatActivity() {
             sign_in_button.visibility = View.GONE
             tv_name.text = account?.displayName
             tv_name.visibility = View.VISIBLE
+
+            startActivity(Intent(this, HotelsActivity::class.java))
         } catch (e: ApiException) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
