@@ -13,4 +13,5 @@
     <string name="mock_name_text">Name</string>
     <string name="mock_go_to_hotel_text">Ir al hotel</string>
     <string name="user_location_permission_explanation">Necesitamos permisos para poder mostrarte los hoteles mas cercanos</string>
+    <string name="permissions_not_allowed">Permisos no permitidos</string>
 </resources>
