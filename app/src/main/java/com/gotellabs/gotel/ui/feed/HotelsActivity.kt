@@ -2,7 +2,10 @@ package com.gotellabs.gotel.ui.feed
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
+import androidx.appcompat.widget.SearchView
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -71,5 +74,25 @@ class HotelsActivity : BaseActivity<HotelsViewModel>(R.layout.activity_hotels),
         val intent = Intent(this, HotelDetailActivity::class.java)
         intent.putExtra("hotelModel", hotel)
         startActivity(intent)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.search_menu, menu)
+        val item = menu?.findItem(R.id.action_search)
+        val searchView = item?.actionView as SearchView
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(p0: String?): Boolean {
+                //TODO("Not yet implemented")
+                return false
+            }
+
+            override fun onQueryTextChange(p0: String?): Boolean {
+                //TODO("Not yet implemented")
+                return false
+            }
+        })
+
+        return super.onCreateOptionsMenu(menu)
     }
 }
