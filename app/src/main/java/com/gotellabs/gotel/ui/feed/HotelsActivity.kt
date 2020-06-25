@@ -34,7 +34,7 @@ class HotelsActivity : BaseActivity<HotelsViewModel>(R.layout.activity_hotels),
         super.onCreate(savedInstanceState)
         observeViewModel()
         viewModel.loadHotels()
-        hotelsAdapter = HotelsAdapter(viewModel.hotelsLiveData.value ?: emptyList(), this)
+        hotelsAdapter = HotelsAdapter((viewModel.hotelsLiveData.value ?: emptyList()), this)
         hotelRecyclerView.apply {
             layoutManager = LinearLayoutManager(this@HotelsActivity)
             adapter = hotelsAdapter
@@ -88,7 +88,7 @@ class HotelsActivity : BaseActivity<HotelsViewModel>(R.layout.activity_hotels),
             }
 
             override fun onQueryTextChange(p0: String?): Boolean {
-                //TODO("Not yet implemented")
+                hotelsAdapter.filter.filter(p0)
                 return false
             }
         })
