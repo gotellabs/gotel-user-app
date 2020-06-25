@@ -14,5 +14,5 @@
     <string name="user_location_permission_explanation">Necesitamos permisos para poder mostrarte los hoteles mas cercanos</string>
     <string name="mock_qualification_text">Calificación</string>
     <string name="default_web_client_id">AIzaSyAykcrJO6iyWQPVPMfiH66zFmLOHC44zqQ</string>
-    <string name="search_menu_tittle">Buscar</string>
+    <string name="search_menu_tittle">Buscar por distrito</string>
 </resources>

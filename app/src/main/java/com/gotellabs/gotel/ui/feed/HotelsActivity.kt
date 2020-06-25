@@ -80,6 +80,7 @@ class HotelsActivity : BaseActivity<HotelsViewModel>(R.layout.activity_hotels),
         menuInflater.inflate(R.menu.search_menu, menu)
         val item = menu?.findItem(R.id.action_search)
         val searchView = item?.actionView as SearchView
+        searchView.queryHint = getString(R.string.search_menu_tittle)
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(p0: String?): Boolean {
