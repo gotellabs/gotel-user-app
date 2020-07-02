@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.gotellabs.domain.model.Hotel
 import com.upc.gotelwear.R
 import kotlinx.android.synthetic.main.hotel_item.view.*
@@ -17,24 +18,24 @@ class HotelWearAdapter(
         val imageView = itemView.hotelImageView
         val hotelName= itemView.hotel_name
         val hotelDescription = itemView.hotel_description
-        fun bindTo(hotel: Hotel) {
+        fun bindTo(hotel: Hotel){
             hotelName.text = hotel.name
             hotelDescription.text = hotel.description
-//            if(hotel.hotelPhotos[0] != null){
-//                Glide
-//                    .with(context)
-//                    .load(hotel.hotelPhotos[0])
-//                    .centerCrop()
-//                    .placeholder(R.mipmap.ic_launcher)
-//                    .into(imageView)
-//            }else{
-//                Glide
-//                    .with(context)
-//                    .load("https://www.ahstatic.com/hotelPhotos/9399_ho_00_p_1024x768.jpg")
-//                    .centerCrop()
-//                    .placeholder(R.mipmap.ic_launcher)
-//                    .into(imageView)
-//            }
+            if(hotel.photos.isNotEmpty()){
+                Glide
+                    .with(context)
+                    .load(hotel.photos[0].imageUrl)
+                    .centerCrop()
+                    .placeholder(R.mipmap.ic_launcher)
+                    .into(imageView)
+            }else{
+                Glide
+                    .with(context)
+                    .load("https://www.ahstatic.com/photos/9399_ho_00_p_1024x768.jpg")
+                    .centerCrop()
+                    .placeholder(R.mipmap.ic_launcher)
+                    .into(imageView)
+            }
 
         }
     }
@@ -50,5 +51,6 @@ class HotelWearAdapter(
     override fun getItemCount(): Int {
         return hotels.size
     }
+
 
 }
