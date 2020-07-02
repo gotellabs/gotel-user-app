@@ -15,4 +15,10 @@
     <string name="mock_go_to_hotel_text">Ir para o hotel</string>
     <string name="user_location_permission_explanation">Precisamos de licenças para mostrar os hotéis mais próximos</string>
     <string name="search_menu_tittle">Pesquisa por distrito</string>
+    <string name="opinion_question">Cual es tu opinión del hotel?</string>
+    <string name="opinion_text">Envia tu opinión</string>
+    <string name="send">Enviar</string>
+    <string name="permissions_not_allowed">No hay permisos disponibles</string>
+    <string name="rate_hotel">Calificar hotel</string>
+    <string name="thanks">Thanks!</string>
 </resources>

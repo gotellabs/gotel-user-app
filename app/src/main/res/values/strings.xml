@@ -15,4 +15,10 @@
     <string name="mock_qualification_text">Calificación</string>
     <string name="default_web_client_id">AIzaSyAykcrJO6iyWQPVPMfiH66zFmLOHC44zqQ</string>
     <string name="search_menu_tittle">Buscar por distrito</string>
+    <string name="opinion_question">Cual es tu opinión del hotel?</string>
+    <string name="opinion_text">Envia tu opinión</string>
+    <string name="send">Enviar</string>
+    <string name="permissions_not_allowed">No hay permisos disponibles</string>
+    <string name="rate_hotel">Calificar hotel</string>
+    <string name="thanks">Thanks!</string>
 </resources>
