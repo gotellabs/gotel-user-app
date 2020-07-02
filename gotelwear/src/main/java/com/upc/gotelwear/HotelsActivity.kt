@@ -27,5 +27,4 @@ class HotelsActivity : WearableActivity() {
             adapter = hotelsAdapter
         }
     }
-
 }

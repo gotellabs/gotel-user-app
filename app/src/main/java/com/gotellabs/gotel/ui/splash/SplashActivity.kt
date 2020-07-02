@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import com.gotellabs.gotel.R
-import com.gotellabs.gotel.ui.feed.HotelsActivity
+import com.gotellabs.gotel.ui.login.LoginActivity
 
 
 class SplashActivity : AppCompatActivity() {
@@ -14,8 +14,7 @@ class SplashActivity : AppCompatActivity() {
 
     internal val mRunnable: Runnable = Runnable {
         if (!isFinishing) {
-
-            val intent = Intent(applicationContext, HotelsActivity::class.java)
+            val intent = Intent(applicationContext, LoginActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -33,11 +32,9 @@ class SplashActivity : AppCompatActivity() {
     }
 
     public override fun onDestroy() {
-
         if (mDelayHandler != null) {
             mDelayHandler!!.removeCallbacks(mRunnable)
         }
-
         super.onDestroy()
     }
 

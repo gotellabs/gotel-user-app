@@ -15,9 +15,8 @@
         android:roundIcon="@mipmap/ic_gotel"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ui.rating.RatingActivity"></activity>
         <activity android:name=".ui.maps.MapsDirectionsActivity" />
-
-
         <activity android:name=".ui.login.LoginActivity" />
         <activity
             android:name=".ui.detail.HotelDetailActivity"

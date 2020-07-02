@@ -52,10 +52,6 @@ class HotelsActivity : BaseActivity<HotelsViewModel>(R.layout.activity_hotels),
             hotelsAdapter.update(movies)
         }
 
-//        viewModel.getNavigateToMovieDetails().observe { movie ->
-//            MovieDetailsActivity.start(this, movie)
-//        }
-
         viewModel.showErrorLiveData.observe { error ->
             Toast.makeText(this, error, Toast.LENGTH_LONG).show()
         }

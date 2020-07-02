@@ -17,7 +17,6 @@ import com.mapbox.api.directions.v5.models.DirectionsRoute
 import com.mapbox.geojson.Feature
 import com.mapbox.geojson.Point
 import com.mapbox.mapboxsdk.Mapbox
-import com.mapbox.mapboxsdk.geometry.LatLng
 import com.mapbox.mapboxsdk.location.LocationComponent
 import com.mapbox.mapboxsdk.location.modes.CameraMode
 import com.mapbox.mapboxsdk.maps.MapView
@@ -179,7 +178,11 @@ class MapsDirectionsActivity : AppCompatActivity(), OnMapReadyCallback, Permissi
     }
 
     override fun onExplanationNeeded(permissionsToExplain: MutableList<String>?) {
-        Toast.makeText(this, R.string.user_location_permission_explanation, Toast.LENGTH_LONG)
+        Toast.makeText(
+            this,
+            getString(R.string.user_location_permission_explanation),
+            Toast.LENGTH_LONG
+        )
             .show()
     }
 
@@ -187,7 +190,7 @@ class MapsDirectionsActivity : AppCompatActivity(), OnMapReadyCallback, Permissi
         if (granted) {
             mapboxMap.style?.let { enableLocationComponent(it) }
         } else {
-            Toast.makeText(this, "Permisos no permitidos", Toast.LENGTH_LONG)
+            Toast.makeText(this, getString(R.string.permissions_not_allowed), Toast.LENGTH_LONG)
                 .show()
             finish()
         }
@@ -231,6 +234,5 @@ class MapsDirectionsActivity : AppCompatActivity(), OnMapReadyCallback, Permissi
     }
 
     // endregion
-
 
 }
