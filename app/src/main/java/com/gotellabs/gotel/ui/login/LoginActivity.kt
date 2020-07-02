@@ -43,6 +43,7 @@ class LoginActivity : AppCompatActivity() {
             sign_in_button.visibility = View.GONE
             tv_name.text = acct.displayName
             tv_name.visibility = View.VISIBLE
+            startActivity(Intent(this, HotelsActivity::class.java))
         }
     }
 
