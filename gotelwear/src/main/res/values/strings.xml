@@ -6,4 +6,5 @@
     -->
     <string name="hello_world">Hello Square World!</string>
     <string name="gotel_name">Gotel app</string>
+    <string name="title_activity_hotel_detail">HotelDetailActivity</string>
 </resources>

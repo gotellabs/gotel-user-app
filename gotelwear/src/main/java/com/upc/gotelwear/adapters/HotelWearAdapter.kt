@@ -1,12 +1,15 @@
 package com.upc.gotelwear.adapters
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.gotellabs.domain.model.Hotel
 import com.upc.gotelwear.R
+import com.upc.gotelwear.controllers.HotelDetailActivity
 import kotlinx.android.synthetic.main.hotel_item.view.*
 
 class HotelWearAdapter(
@@ -18,9 +21,15 @@ class HotelWearAdapter(
         val imageView = itemView.hotelImageView
         val hotelName= itemView.hotel_name
         val hotelDescription = itemView.hotel_description
+        val hotelConstraint=itemView.constraint
         fun bindTo(hotel: Hotel){
             hotelName.text = hotel.name
             hotelDescription.text = hotel.description
+            hotelConstraint.setOnClickListener {
+                val intent= Intent(context,HotelDetailActivity::class.java)
+                intent.putExtra("hotel", hotel)
+                context.startActivity(intent)
+            }
             if(hotel.photos.isNotEmpty()){
                 Glide
                     .with(context)

@@ -27,6 +27,15 @@
             android:value="true" />
 
         <activity
+            android:name=".controllers.HotelDetailActivity"
+            android:label="@string/title_activity_hotel_detail">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".controllers.HotelsActivity"
             android:label="@string/app_name">
             <intent-filter>
