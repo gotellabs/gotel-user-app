@@ -14,4 +14,5 @@
     <string name="mock_name_text">Name</string>
     <string name="mock_go_to_hotel_text">Go to hotel</string>
     <string name="user_location_permission_explanation">We need permission to show you the closest hotels</string>
+    <string name="search_menu_tittle">Search by district</string>
 </resources>
