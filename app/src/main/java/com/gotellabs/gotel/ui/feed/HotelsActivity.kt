@@ -2,8 +2,10 @@ package com.gotellabs.gotel.ui.feed
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.gotellabs.domain.model.Hotel
@@ -31,7 +33,7 @@ class HotelsActivity : BaseActivity<HotelsViewModel>(R.layout.activity_hotels),
         super.onCreate(savedInstanceState)
         observeViewModel()
         viewModel.loadHotels()
-        hotelsAdapter = HotelsAdapter(viewModel.hotelsLiveData.value ?: emptyList(), this)
+        hotelsAdapter = HotelsAdapter((viewModel.hotelsLiveData.value ?: emptyList()), this)
         hotelRecyclerView.apply {
             layoutManager = LinearLayoutManager(this@HotelsActivity)
             adapter = hotelsAdapter
@@ -52,10 +54,6 @@ class HotelsActivity : BaseActivity<HotelsViewModel>(R.layout.activity_hotels),
             hotelsAdapter.update(movies)
         }
 
-//        viewModel.getNavigateToMovieDetails().observe { movie ->
-//            MovieDetailsActivity.start(this, movie)
-//        }
-
         viewModel.showErrorLiveData.observe { error ->
             Toast.makeText(this, error, Toast.LENGTH_LONG).show()
         }
@@ -71,5 +69,26 @@ class HotelsActivity : BaseActivity<HotelsViewModel>(R.layout.activity_hotels),
         val intent = Intent(this, HotelDetailActivity::class.java)
         intent.putExtra("hotelModel", hotel)
         startActivity(intent)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.search_menu, menu)
+        val item = menu?.findItem(R.id.action_search)
+        val searchView = item?.actionView as SearchView
+        searchView.queryHint = getString(R.string.search_menu_tittle)
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(p0: String?): Boolean {
+                //TODO("Not yet implemented")
+                return false
+            }
+
+            override fun onQueryTextChange(p0: String?): Boolean {
+                hotelsAdapter.filter.filter(p0)
+                return false
+            }
+        })
+
+        return super.onCreateOptionsMenu(menu)
     }
 }

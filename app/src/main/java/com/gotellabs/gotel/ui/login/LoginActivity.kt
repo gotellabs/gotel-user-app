@@ -16,6 +16,7 @@ import com.gotellabs.gotel.ui.feed.HotelsActivity
 import kotlinx.android.synthetic.main.activity_login.*
 
 const val RC_SIGN_IN = 123
+
 class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,12 +29,12 @@ class LoginActivity : AppCompatActivity() {
             .requestEmail()
             .build()
         // Build a GoogleSignInClient with the options specified by gso.
-        val mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+        val mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
 
         sign_in_button.visibility = View.VISIBLE
         tv_name.visibility = View.GONE
         sign_in_button.setSize(SignInButton.SIZE_STANDARD)
-        sign_in_button.setOnClickListener{
+        sign_in_button.setOnClickListener {
             val signInIntent = mGoogleSignInClient.signInIntent
             startActivityForResult(signInIntent, RC_SIGN_IN)
         }
@@ -42,6 +43,7 @@ class LoginActivity : AppCompatActivity() {
             sign_in_button.visibility = View.GONE
             tv_name.text = acct.displayName
             tv_name.visibility = View.VISIBLE
+            startActivity(Intent(this, HotelsActivity::class.java))
         }
     }
 
@@ -78,7 +80,6 @@ class LoginActivity : AppCompatActivity() {
         }
 
     }
-
 
 
 }

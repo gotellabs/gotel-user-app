@@ -8,6 +8,7 @@ import com.bumptech.glide.Glide
 import com.gotellabs.domain.model.Hotel
 import com.gotellabs.gotel.R
 import com.gotellabs.gotel.ui.maps.MapsDirectionsActivity
+import com.gotellabs.gotel.ui.rating.RatingActivity
 import kotlinx.android.synthetic.main.activity_hotel_detail.*
 
 class HotelDetailActivity : AppCompatActivity() {
@@ -27,8 +28,13 @@ class HotelDetailActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        detailHotelRateHotelBtn.setOnClickListener {
+            val intent = Intent(this, RatingActivity::class.java)
+            startActivity(intent)
+        }
+
         hotelPhone.setOnClickListener {
-            val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + hotelPhone.text.toString()) )
+            val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + hotelPhone.text.toString()))
             startActivity(intent)
         }
     }
@@ -54,5 +60,7 @@ class HotelDetailActivity : AppCompatActivity() {
         hotelDescription.text = hotel.description
         hotelPhone.text = hotel.phone
         hotelRate.text = hotel.rate
+
+
     }
 }

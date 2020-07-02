@@ -64,6 +64,8 @@ dependencies {
 
     // UI
     implementation Dependencies.swipeRefreshLayout
+    implementation 'com.github.sujithkanna:smileyrating:1.6.8'
+
 
     // Coroutines
     implementation Dependencies.coroutines
